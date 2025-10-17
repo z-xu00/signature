@@ -18,6 +18,8 @@
     #signature {
       border: 1px solid #ccc;
       margin-bottom: 20px;
+      width: 100% !important;
+      height: 100% !important;
     }
     button {
       padding: 10px 20px;
@@ -63,8 +65,7 @@
     // 初始化 jSignature 插件
     // 设置画布大小、支持透明背景、支持移动端
     $("#signature").jSignature({
-      width: 400,
-      height: 150,
+      height: 400,
       'background-color': 'transparent',
       'decor-color': 'transparent',
       'lineWidth': 2,
@@ -80,9 +81,6 @@
         alert("请先签名！");
         return;
       }
-
-      // jSignature getData() 默认可能返回多种格式，我们明确要 svg 和 base30
-      // 注意：jSignature 的 getData(format) 方法可以按格式提取数据
 
       // 1. 获取 SVG 格式数据
       let svgData = $("#signature").jSignature("getData", "svg");
